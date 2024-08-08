@@ -8,7 +8,7 @@ config();
 export const app = express();
 const port = process.env.PORT || 3000;
 app.use(cors({
-    origin: "http://192.168.1.4:5173",
+    origin: "https://barca-store-front.vercel.app",
     credentials: true,
 }));
 app.use(express.json());
