@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import matches from "../../model/matchesModel";
+import matches from "../../model/matchesModel/index.js";
 export const getMatches = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const todayDate = new Date();
     const matchesData = yield matches
