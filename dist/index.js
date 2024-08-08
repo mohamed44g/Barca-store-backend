@@ -3,7 +3,7 @@ import { config } from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
-import UserRouter from "./router/UserRouter";
+import UserRouter from "./router/UserRouter/index";
 config();
 export const app = express();
 const port = process.env.PORT || 3000;
