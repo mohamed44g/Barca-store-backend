@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import user from "../../model/userModel";
+import user from "../../model/userModel/index.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 export const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
