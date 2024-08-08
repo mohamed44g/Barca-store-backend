@@ -22,7 +22,7 @@ router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/profile", authenticate, profile);
 router.delete("/delete", authenticate, deleteUser);
-router.post("/logout", authenticate, logout);
+router.post("/logout", logout);
 router.get("/cart", authenticate, getProductsCart);
 router.post("/cart", authenticate, setProductCart);
 router.delete("/cart/:id", authenticate, deleteProductCart);
