@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import player from "../../model/playerModel";
+import player from "../../model/playerModel/index.js";
 export const getPlayer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b;
     const player_id = (_a = req.params) === null || _a === void 0 ? void 0 : _a.id;
