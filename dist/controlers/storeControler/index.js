@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import tshirts from "../../model/T-shirtsModel";
+import tshirts from "../../model/T-shirtsModel/index.js";
 export const getProducts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { page, limit } = req.query;
     if (limit) {
