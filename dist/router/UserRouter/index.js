@@ -1,12 +1,12 @@
 import express from "express";
 // const verifyRoutes = require("../middleware/verifyRout");
 const router = express();
-import { registerUser, loginUser, getProductsCart, setProductCart, deleteProductCart, profile, deleteUser, logout, } from "../../controlers/userControler";
-import { getProducts } from "../../controlers/storeControler";
-import { getPlayer, getPlayers } from "../../controlers/playeControler";
-import { getnew, getnews } from "../../controlers/newsControler";
-import { authenticate } from "../../middleware/authenticate";
-import { getMatches } from "../../controlers/matchesControler";
+import { registerUser, loginUser, getProductsCart, setProductCart, deleteProductCart, profile, deleteUser, logout, } from "../../controlers/userControler/index.js";
+import { getProducts } from "../../controlers/storeControler/index.js";
+import { getPlayer, getPlayers } from "../../controlers/playeControler/index.js";
+import { getnew, getnews } from "../../controlers/newsControler/index.js";
+import { authenticate } from "../../middleware/authenticate/index.js";
+import { getMatches } from "../../controlers/matchesControler/index.js";
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/profile", authenticate, profile);
