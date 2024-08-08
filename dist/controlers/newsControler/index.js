@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import news from "../../model/newsModel/index.js";
+import news from "../../model/matchesModel/newsModel/index";
 export const getnews = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const news_info = yield news.find({}, { _id: true, name: true, img: true });
     res.json({ status: "success", data: news_info });
