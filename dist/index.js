@@ -4,28 +4,36 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import UserRouter from "./router/UserRouter/index.js";
+
 config();
+
 export const app = express();
-const port = process.env.PORT || 3000;
+
+// إعدادات CORS
 app.use(cors({
     origin: "https://barca-store.vercel.app",
     credentials: true,
 }));
+
+// Middleware
 app.use(express.json());
 app.use(cookieParser());
+
+// الراوتر
 app.use("/api/v1/users", UserRouter);
-mongoose
-    .connect(process.env.DATABASE, {
-    dbName: "BarcaStore",
-})
-    .then(() => console.log("Connected!"))
-    .catch((err) => console.log(err));
+
+// التعامل مع المسارات غير الموجودة
 app.all("*", (req, res) => {
-    res
-        .status(404)
-        .json({ status: "error", massage: "this resource not avialble" });
+    res.status(404).json({ status: "error", message: "this resource not available" });
 });
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+
+// تصدير التطبيق كتصدير افتراضي
+export default app;
+
+// الاتصال بـ MongoDB (غير متزامن)
+mongoose.connect(process.env.DATABASE, {
+    dbName: "BarcaStore",
+}).catch((err) => {
+    console.error("MongoDB connection error:", err);
+    // يمكنك إضافة منطق إضافي هنا للتعامل مع الأخطاء
 });
-//# sourceMappingURL=index.js.map
