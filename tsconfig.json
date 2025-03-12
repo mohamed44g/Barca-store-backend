@@ -4,12 +4,14 @@
     "target": "es6",
     "module": "ESNext",
     "moduleResolution": "node",
-    "outDir": "dist",
+    "noEmit": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
     "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": false,
   },
   "ts-node": {
     "esm": true,
